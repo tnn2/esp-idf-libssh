@@ -394,7 +394,7 @@ sshd_main(struct server_ctx *sc)
 {
 	int error;
 	ssh_event event;
-	static bool time_to_die = false;
+	bool time_to_die = false;
 
 	if (ssh_init() < 0) {
 		return SSH_ERROR;
