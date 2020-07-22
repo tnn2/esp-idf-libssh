@@ -1,0 +1,72 @@
+set(SRC libssh/src)
+set(srcs
+  ${SRC}/agent.c
+  ${SRC}/auth.c
+  ${SRC}/base64.c
+  ${SRC}/bignum.c
+  ${SRC}/bind.c
+  ${SRC}/bind_config.c
+  ${SRC}/buffer.c
+  ${SRC}/callbacks.c
+  ${SRC}/channels.c
+  ${SRC}/client.c
+  ${SRC}/config.c
+  ${SRC}/connect.c
+  ${SRC}/connector.c
+  ${SRC}/curve25519.c
+  ${SRC}/dh.c
+  ${SRC}/dh-gex.c
+  ${SRC}/dh_key.c
+  ${SRC}/ecdh.c
+  ${SRC}/ecdh_mbedcrypto.c
+  ${SRC}/error.c
+  ${SRC}/external/ed25519.c
+  ${SRC}/external/fe25519.c
+  ${SRC}/external/ge25519.c
+  ${SRC}/external/sc25519.c
+  ${SRC}/getpass.c
+  ${SRC}/init.c
+  ${SRC}/kdf.c
+  ${SRC}/kex.c
+  ${SRC}/known_hosts.c
+  ${SRC}/knownhosts.c
+  ${SRC}/legacy.c
+  ${SRC}/libmbedcrypto.c
+  ${SRC}/log.c
+  ${SRC}/match.c
+  ${SRC}/mbedcrypto_missing.c
+  ${SRC}/messages.c
+  ${SRC}/misc.c
+  ${SRC}/options.c
+  ${SRC}/packet.c
+  ${SRC}/packet_cb.c
+  ${SRC}/packet_crypt.c
+  ${SRC}/pcap.c
+  ${SRC}/pki.c
+  ${SRC}/pki_container_openssh.c
+  ${SRC}/poll.c
+  ${SRC}/server.c
+  ${SRC}/session.c
+  ${SRC}/scp.c
+  ${SRC}/socket.c
+  ${SRC}/string.c
+  ${SRC}/threads.c
+  ${SRC}/threads/mbedtls.c
+  ${SRC}/threads/noop.c
+  ${SRC}/wrapper.c
+  ${SRC}/external/bcrypt_pbkdf.c
+  ${SRC}/external/blowfish.c
+  ${SRC}/external/chacha.c
+  ${SRC}/external/poly1305.c
+  ${SRC}/chachapoly.c
+  ${SRC}/config_parser.c
+  ${SRC}/token.c
+  ${SRC}/pki_ed25519.c
+  ${SRC}/pki_ed25519_common.c
+  ${SRC}/pki_mbedcrypto.c
+)
+
+idf_component_register(SRCS "${srcs}"
+                    INCLUDE_DIRS compat libssh/include
+                    REQUIRES lwip mbedtls)
+
